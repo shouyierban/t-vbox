@@ -20,9 +20,8 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			# "高妹": "高妹",
-			"全部": "",
-			"all": "Tokyohot"
+			"高妹": "高妹",
+			# "东京": "东京"
 			
 		}
 		classes = []
@@ -42,12 +41,10 @@ class Spider(Spider):
 
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		# if tid == "高妹":
-		# 	id=urllib.parse.quote(tid)
-		# else:
-		# 	id=tid
-			
-		url = 'https://missav.com/search/{0}?sort=released_at&page={1}'.format(tid, pg)
+		if tid == "高妹":
+			url = 'https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={1}'.format(pg)
+		else:
+			url = 'https://missav.com/dm16/tokyohot?sort=released_at&page={1}'.format(pg)
 		rsp = self.fetch(url)
 		content = self.html(rsp.text)
 		aList = content.xpath("//div[@class="relative aspect-w-16 aspect-h-9 rounded overflow-hidden shadow-lg"]")
