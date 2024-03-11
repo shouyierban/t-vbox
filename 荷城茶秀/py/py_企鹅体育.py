@@ -47,7 +47,7 @@ class Spider(Spider):
 		# else:
 		# 	id=tid
 			
-		url = 'https://missav.com/dm16/{0}?sort=released_at&page={1}'.format(tid, pg)
+		url = 'https://missav.com/search/{0}?sort=released_at&page={1}'.format(tid, pg)
 		rsp = self.fetch(url)
 		content = self.html(rsp.text)
 		aList = content.xpath("//div[@class="relative aspect-w-16 aspect-h-9 rounded overflow-hidden shadow-lg"]")
