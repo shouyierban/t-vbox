@@ -6,7 +6,7 @@ from base.spider import Spider
 import json
 import math
 import re
-import urllib
+# import urllib
 
 class Spider(Spider):
 	def getName(self):
@@ -21,7 +21,8 @@ class Spider(Spider):
 		result = {}
 		cateManual = {
 			# "高妹": "高妹",
-			"all": "tokyohot"
+			"全部": "",
+			"all": "Tokyohot"
 			
 		}
 		classes = []
@@ -41,12 +42,12 @@ class Spider(Spider):
 
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		if tid == "高妹":
-			id=urllib.parse.quote(tid)
-		else:
-			id=tid
+		# if tid == "高妹":
+		# 	id=urllib.parse.quote(tid)
+		# else:
+		# 	id=tid
 			
-		url = 'https://missav.com/dm16/{0}?sort=released_at&page={1}'.format(id, pg)
+		url = 'https://missav.com/dm16/{0}?sort=released_at&page={1}'.format(tid, pg)
 		rsp = self.fetch(url)
 		content = self.html(rsp.text)
 		aList = content.xpath("//div[@class="relative aspect-w-16 aspect-h-9 rounded overflow-hidden shadow-lg"]")
