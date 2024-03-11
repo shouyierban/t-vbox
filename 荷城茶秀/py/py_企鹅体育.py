@@ -21,7 +21,7 @@ class Spider(Spider):
 		result = {}
 		cateManual = {
 			# "高妹": "高妹",
-			"东京热": "tokyohot"
+			"all": "tokyohot"
 			
 		}
 		classes = []
