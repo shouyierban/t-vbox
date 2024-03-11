@@ -9,7 +9,7 @@ import re
 
 class Spider(Spider):
 	def getName(self):
-		return "企鹅体育"
+		return "super"
 	def init(self,extend=""):
 		pass
 	def isVideoFormat(self,url):
@@ -19,16 +19,7 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"全部": "",
-			"足球": "Football",
-			"篮球": "Basketball",
-			"NBA": "NBA",
-			"台球": "Billiards",
-			"搏击": "Fight",
-			"网排": "Tennis",
-			"游戏": "Game",
-			"其他": "Others",
-			"橄棒冰": "MLB"
+			"全部": "tall"
 		}
 		classes = []
 		for k in cateManual:
@@ -47,25 +38,26 @@ class Spider(Spider):
 
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		url = 'https://live.qq.com/api/live/vlist?page_size=60&shortName={0}&page={1}'.format(tid, pg)
+		url = 'https://supjav.com/zh/tag/{0}/page/{1}'.format(tid, pg)
 		rsp = self.fetch(url)
-		content = rsp.text
-		jo = json.loads(content)
+
+		content = self.html(rsp.text)
+		aList = content.xpath("//div[@class='post']")
+		pgc = math.ceil(numvL/24)
 		videos = []
-		vodList = jo['data']['result']
-		numvL = len(vodList)
-		pgc = math.ceil(numvL/15)
-		for vod in vodList:
-			aid = (vod['room_id'])
-			title = vod['room_name'].strip()
-			img = vod['room_src']
-			remark = (vod['game_name']).strip()
+		for a in aList:
+			name = a.xpath('./a/@title')[0]
+			pic = a.xpath('./a/img/@src')[0]
+			mark = a.xpath(".//h3")[0]
+			sid = a.xpath("./a/@href")[0]
+			sid = self.regStr(sid,"/zh/(\\S+).html")
 			videos.append({
-				"vod_id": aid,
-				"vod_name": title,
-				"vod_pic": img,
-				"vod_remarks": remark
+				"vod_id":sid,
+				"vod_name":name,
+				"vod_pic":pic,
+				"vod_remarks":"未知"
 			})
+
 		result['list'] = videos
 		result['page'] = pg
 		result['pagecount'] = pgc
@@ -75,33 +67,32 @@ class Spider(Spider):
 
 	def detailContent(self,array):
 		aid = array[0]
-		url = "https://m.live.qq.com/{0}".format(aid)
+		url = "https://supjav.com/zh/{0}.html".format(aid)
 		rsp = self.fetch(url)
-		html = self.cleanText(rsp.text)
-		if self.regStr(reg=r'\"show_status\":\"(\d)\"', src=html) == '1':
-			title = self.regStr(reg=r'\"room_name\":\"(.*?)\"', src=html)
-			pic = self.regStr(reg=r'\"room_src\":\"(.*?)\"', src=html)
-			typeName = self.regStr(reg=r'\"game_name\":\"(.*?)\"', src=html)
-			remark = self.regStr(reg=r'\"nickname\":\"(.*?)\"', src=html)
-			purl = self.regStr(reg=r'\"hls_url\":\"(.*?)\"', src=html)
-		else:
-			return {}
-		vod = {
-			"vod_id": aid,
-			"vod_name": title,
-			"vod_pic": pic,
-			"type_name": typeName,
-			"vod_year": "",
-			"vod_area": "",
-			"vod_remarks": remark,
-			"vod_actor": '',
-			"vod_director":'',
-			"vod_content": ''
-		}
-		playUrl = '{0}${1}#'.format(typeName, purl)
-		vod['vod_play_from'] = '🌸荷城茶秀接口🌸企鹅线路'
-		vod['vod_play_url'] = playUrl
+		root = self.html(rsp.text)
+		node = root.xpath("//div[@class='post-meta clearfix']")[0]
+		
+		pic = node.xpath("./img/@src")[0]
+		title = node.xpath('./img/@alt')[0]
+		detail = node.xpath(".div[@class='cats']/p[1]")[0]
+		remarks = node.xpath("./div[@class='cats']/p[2]/a")[0]
 
+		vod = {
+			"vod_id":tid,
+			"vod_name":title,
+			"vod_pic":pic,
+			"type_name":"",
+			"vod_year":"",
+			"vod_area":"",
+			"vod_remarks":remarks,
+			"vod_actor":"",
+			"vod_director":"",
+			"vod_content":"detail"
+		}
+		
+		vod['vod_play_from'] = 'tv'
+		
+		vod['vod_play_url'] = "https://ss394.asongu.com/stream/"
 		result = {
 			'list': [
 				vod
@@ -115,10 +106,17 @@ class Spider(Spider):
 	def playerContent(self,flag,id,vipFlags):
 		result = {}
 		url = id
-		header = {
-					 'Referer': 'https://m.live.qq.com/',
-					 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-				 }
+		headers = {
+			'authority': 'ss394.asongu.com',
+			'accept': '*/*',
+			'accept-language': 'zh-CN,zh;q=0.9',
+			'cache-control': 'no-cache',
+			'origin': 'https://emturbovid.com',
+			'pragma': 'no-cache',
+			'referer': 'https://emturbovid.com/',
+			'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
+			'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+		}
 		result["parse"] = 0
 		result["playUrl"] = ''
 		result["url"] = url
