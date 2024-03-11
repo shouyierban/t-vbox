@@ -20,7 +20,7 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"高妹": "高妹",
+			# "高妹": "高妹",
 			"东京热": "tokyohot"
 			
 		}
