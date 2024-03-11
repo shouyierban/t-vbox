@@ -6,6 +6,7 @@ from base.spider import Spider
 import json
 import math
 import re
+import urllib
 
 class Spider(Spider):
 	def getName(self):
@@ -19,7 +20,9 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"全部": "tall"
+			"高妹": "高妹",
+			"东京热": "tokyohot"
+			
 		}
 		classes = []
 		for k in cateManual:
@@ -38,19 +41,23 @@ class Spider(Spider):
 
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		url = 'https://supjav.com/zh/tag/{0}/page/{1}'.format(tid, pg)
+		if tid == "高妹":
+			id=urllib.parse.quote(tid)
+		else:
+			id=tid
+			
+		url = 'https://missav.com/dm16/{0}?sort=released_at&page={1}'.format(id, pg)
 		rsp = self.fetch(url)
-
 		content = self.html(rsp.text)
-		aList = content.xpath("//div[@class='post']")
-		pgc = math.ceil(numvL/24)
+		aList = content.xpath("//div[@class="relative aspect-w-16 aspect-h-9 rounded overflow-hidden shadow-lg"]")
+		pgc = math.ceil(numvL/12)
 		videos = []
 		for a in aList:
-			name = a.xpath('./a/@title')[0]
+			name = a.xpath('./a/img/@alt')[0]
 			pic = a.xpath('./a/img/@src')[0]
-			mark = a.xpath(".//h3")[0]
+			# mark = a.xpath(".//h3")[0]
 			sid = a.xpath("./a/@href")[0]
-			sid = self.regStr(sid,"/zh/(\\S+).html")
+			sid = self.regStr(sid,"com/(\\S+)")
 			videos.append({
 				"vod_id":sid,
 				"vod_name":name,
@@ -67,32 +74,47 @@ class Spider(Spider):
 
 	def detailContent(self,array):
 		aid = array[0]
-		url = "https://supjav.com/zh/{0}.html".format(aid)
+		url = "https://missav.com/{0}".format(aid)
 		rsp = self.fetch(url)
 		root = self.html(rsp.text)
-		node = root.xpath("//div[@class='post-meta clearfix']")[0]
-		
-		pic = node.xpath("./img/@src")[0]
-		title = node.xpath('./img/@alt')[0]
-		detail = node.xpath(".div[@class='cats']/p[1]")[0]
-		remarks = node.xpath("./div[@class='cats']/p[2]/a")[0]
+
+		# pic = node.xpath("./img/@src")[0]
+		title = root.xpath('//div[@class="mt-4"]/h1')[0]
+		actor = root.xpath('//div[@class="space-y-2"]//div[4]/a')[0]
+		# detail = node.xpath(".div[@class='cats']/p[1]")[0]
+		# remarks = node.xpath("./div[@class='cats']/p[2]/a")[0]
 
 		vod = {
-			"vod_id":tid,
+			"vod_id":aid,
 			"vod_name":title,
-			"vod_pic":pic,
+			"vod_pic":"",
 			"type_name":"",
 			"vod_year":"",
 			"vod_area":"",
-			"vod_remarks":remarks,
-			"vod_actor":"",
+			"vod_remarks":"",
+			"vod_actor":actor,
 			"vod_director":"",
-			"vod_content":"detail"
+			"vod_content":""
 		}
 		
-		vod['vod_play_from'] = 'tv'
+		vod['vod_play_from'] = 'miss'
 		
-		vod['vod_play_url'] = "https://ss394.asongu.com/stream/"
+		scripts = root.xpath("//script/text()")
+		
+		jo = ''
+		for script in scripts:
+			jo += str(script)
+		code_data = self.regStr(jo,r'm3u8\|(.*?)\|com')
+		rate_data = self.regStr(jo,r'video\|(.*?)\|source')
+		if code_data and rate_data:
+			code_text = code_data.group(1)
+			code_text = code_text.replace('|', '-')
+			code_list = code_text.split('-')
+			code_list.reverse()
+			f_code = '-'.join(code_list)
+			f_rate = rate_data.group(1)
+		
+		vod['vod_play_url'] = 'https://surrit.com/' + f_code + '/' + f_rate + '/video.m3u8'
 		result = {
 			'list': [
 				vod
@@ -107,13 +129,13 @@ class Spider(Spider):
 		result = {}
 		url = id
 		headers = {
-			'authority': 'ss394.asongu.com',
+			'authority': 'surrit.com',
 			'accept': '*/*',
 			'accept-language': 'zh-CN,zh;q=0.9',
 			'cache-control': 'no-cache',
-			'origin': 'https://emturbovid.com',
+			'origin': 'https://missav.com',
 			'pragma': 'no-cache',
-			'referer': 'https://emturbovid.com/',
+			# referer': 'https://missav.com/gvh-633',
 			'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
 			'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
 		}
