@@ -1,7 +1,7 @@
 #EXTM3U
-#EXTINF:-1 group-title="东京" tvg-name="N0470 Yuka ⑱ 歲 2 插入" tvg-logo="https://eightcha.com/n0470/cover.jpg?class=thumbnail",N0470 Yuka ⑱ 歲 2 插入
+#EXTINF:-1 group-title="东京" tvg-name="N0470 Yuka ⑱ 歲 2 插入" tvg-logo="https://eightcha.com/n0470/cover.jpg",N0470 Yuka ⑱ 歲 2 插入
 https://surrit.com/0275ec24-e840-4f3c-a30b-172899d40225/1280x720/video.m3u8
-#EXTINF:-1 group-title="东京" tvg-name="N0471 完美模型完整皮膚bakyo輪可以" tvg-logo="https://eightcha.com/urvrsp-312/cover.jpg?class=thumbnail",N0471 完美模型完整皮膚bakyo輪可以
+#EXTINF:-1 group-title="东京" tvg-name="N0471 完美模型完整皮膚bakyo輪可以" tvg-logo="https://eightcha.com/urvrsp-312/cover.jpg",N0471 完美模型完整皮膚bakyo輪可以
 https://surrit.com/56a1574c-072f-45ff-a507-ba50155141ad/1280x720/video.m3u8
 #EXTINF:-1 group-title="高妹" tvg-name="DVAJ-176 Ruri Tachibana 有太多的成長空間。在 Camitel 女牛仔的粗俗腰 - 立花瑠莉" tvg-logo="",DVAJ-176 Ruri Tachibana 有太多的成長空間。在 Camitel 女牛仔的粗俗腰 - 立花瑠莉
 https://surrit.com/1025fa11-bee8-4a35-8382-7a4e0a1d14bc/1280x720/video.m3u8
