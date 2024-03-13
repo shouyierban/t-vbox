@@ -9,47 +9,8 @@
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}"
         }
     ],
-    "warningText": "荷城茶秀接口完全免费，切勿付费购买！",
+    "warningText": "",
     "sites": [
-        {
-            "key": "js_豆瓣热播",
-            "name": "🏮荷城茶秀:祝您新年快乐!龙年大吉!🏮",
-            "type": 3,
-            "api": "./api/Api.js",
-            "searchable": 0,
-            "quickSearch": 0,
-            "filterable": 0,
-            "ext": "./js/Doubanrebo.js"
-        },
-        {
-            "key": "AliYunPan",
-            "name": "🅱️阿里云盘|T设置",
-            "type": 3,
-            "api": "csp_AliYunPan",
-            "searchable": 0,
-            "filterable": 0,
-            "ext": "http://127.0.0.1:9978/file/XYQTVBox/alitoken.txt+4k|fhd|auto"
-        },
-        {
-            "key": "wogg",
-            "name": "🅱️玩偶阿里|T追剧",
-            "type": 3,
-            "api": "csp_XYQHikerAL",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 0,
-            "ext": "./json/玩偶哥哥.json"
-        },
-        {
-            "key": "wwgg",
-            "name": "🅱️玩我阿里|T追剧",
-            "type": 3,
-            "api": "csp_XYQHikerAL",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 0,
-            "ext": "./json/玩我哥哥.json"
-        },
         {
             "key": "yscal",
             "name": "🅱️运输阿里|T追剧",
@@ -100,24 +61,14 @@
             "ext": "./py/py_央视少儿.py"
         },
         {
-            "key": "央视经典",
-            "name": "📺央视｜经典",
-            "type": 3,
-            "api": "csp_Bili",
-            "searchable": 0,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./json/哔哩经典.json"
-        },
-        {
             "key": "py_cctv_企鹅",
-            "name": "📺体育｜直播",
+            "name": "📺体育｜miss",
             "type": 3,
-            "api": "./py/py_企鹅体育.py",
+            "api": "",
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 1,
-            "ext": ""
+            "ext": "./py/py_企鹅体育.py"
         },
         {
             "key": "哔哩高中",

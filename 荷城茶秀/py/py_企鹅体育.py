@@ -6,7 +6,6 @@ from base.spider import Spider
 import json
 import math
 import re
-# import urllib
 
 class Spider(Spider):
 	def getName(self):
@@ -20,9 +19,8 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"高妹": "高妹",
-			"东京": "东京"
-			
+			"tall": "tall",
+			"tokoy": "tokoy"
 		}
 		classes = []
 		for k in cateManual:
@@ -41,7 +39,7 @@ class Spider(Spider):
 
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		if tid == "高妹":
+		if tid == "tall":
 			url = 'https://cors.notesnook.com/https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={1}'.format(pg)
 		else:
 			url = 'https://cors.notesnook.com/https://missav.com/dm16/tokyohot?sort=released_at&page={1}'.format(pg)
