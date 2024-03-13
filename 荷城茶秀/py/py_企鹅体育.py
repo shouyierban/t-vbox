@@ -127,14 +127,6 @@ class Spider(Spider):
 		result = {}
 		url = id
 		headers = {
-			'authority': 'surrit.com',
-			'accept': '*/*',
-			'accept-language': 'zh-CN,zh;q=0.9',
-			'cache-control': 'no-cache',
-			'origin': 'https://missav.com',
-			'pragma': 'no-cache',
-			# referer': 'https://missav.com/gvh-633',
-			'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
 			'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
 		}
 		result["parse"] = 0
