@@ -1,12 +1,33 @@
-#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml"
-#EXTINF:-1 group-title="Local" tvg-name="江苏城市" tvg-logo="https://live.zhoujie218.top/taibiao/江苏城市.png",江苏城市
-http://117.91.106.125:4022/rtp/239.49.9.35:6000
-#EXTINF:-1 group-title="Local" tvg-name="江苏综艺" tvg-logo="https://live.zhoujie218.top/taibiao/江苏综艺.png",江苏综艺
-http://117.91.106.125:4022/rtp/239.49.9.36:6000
-#EXTINF:-1 group-title="Local" tvg-name="江苏体育" tvg-logo="https://live.zhoujie218.top/taibiao/江苏体育.png",江苏体育
-http://117.91.106.125:4022/rtp/239.49.9.37:6000
-#EXTINF:-1 group-title="Local" tvg-name="江苏影视" tvg-logo="https://live.zhoujie218.top/taibiao/江苏影视.png",江苏影视
-http://117.91.106.125:4022/rtp/239.49.9.38:6000
-#EXTINF:-1 group-title="Local" tvg-name="江苏卡通" tvg-logo="https://live.zhoujie218.top/taibiao/江苏卡通.png",江苏卡通
-http://117.91.106.125:4022/rtp/239.49.9.39:6000
-#EXTINF:-1 group-title="Local" tvg-name="江苏新闻" tvg-logo="https://live.zhoujie218.top/taibiao/江苏新闻.png",江苏新闻
+#EXTM3U
+#EXTINF:-1 group-title="东京" tvg-name="N0470 Yuka ⑱ 歲 2 插入" tvg-logo="https://eightcha.com/n0470/cover.jpg?class=thumbnail",N0470 Yuka ⑱ 歲 2 插入
+https://surrit.com/0275ec24-e840-4f3c-a30b-172899d40225/1280x720/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="N0471 完美模型完整皮膚bakyo輪可以" tvg-logo="https://eightcha.com/urvrsp-312/cover.jpg?class=thumbnail",N0471 完美模型完整皮膚bakyo輪可以
+https://surrit.com/56a1574c-072f-45ff-a507-ba50155141ad/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="DVAJ-176 Ruri Tachibana 有太多的成長空間。在 Camitel 女牛仔的粗俗腰 - 立花瑠莉" tvg-logo="",DVAJ-176 Ruri Tachibana 有太多的成長空間。在 Camitel 女牛仔的粗俗腰 - 立花瑠莉
+https://surrit.com/1025fa11-bee8-4a35-8382-7a4e0a1d14bc/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="WAKM-007 被安靜的高個子蕩婦折磨的八尺大人 妖怪八尺大人擠出著迷的男性精神 泉純 - 和泉潤" tvg-logo="",WAKM-007 被安靜的高個子蕩婦折磨的八尺大人 妖怪八尺大人擠出著迷的男性精神 泉純 - 和泉潤
+https://surrit.com/0ef260d3-2724-41d9-9a83-a8f30a3970d8/842x480/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="K0818 獵物女 Yuri Asakura" tvg-logo="",K0818 獵物女 Yuri Asakura
+https://surrit.com/eecdf608-9754-4d97-a5f9-3463da26c5b2/1280x720/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="K0819 獵物 女性 Yuko Hirotsu" tvg-logo="",K0819 獵物 女性 Yuko Hirotsu
+https://surrit.com/c3c6b417-0681-49c5-83ad-fea65b4750ca/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="REBDB-717 Momo2 Luxury showtime・Momo Sakurazora Blu-ray 版 (Blu-ray Disc) - 櫻空桃" tvg-logo="",REBDB-717 Momo2 Luxury showtime・Momo Sakurazora Blu-ray 版 (Blu-ray Disc) - 櫻空桃
+https://surrit.com/67f55d02-4577-4198-9653-80dc8e939400/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="KITAIKE-543 盧克" tvg-logo="",KITAIKE-543 盧克
+https://surrit.com/e6244d0b-f351-4566-910a-b05852a36d5e/1280x720/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="N0678 Rin Hitomi TOKYO HOT Ryu 正宗中出" tvg-logo="",N0678 Rin Hitomi TOKYO HOT Ryu 正宗中出
+https://surrit.com/f7ed42c7-d5f7-4ea6-b4f4-5dc7207e98ef/842x480/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="N0676 Kaori Nishio 中出 TOKYO HOT" tvg-logo="",N0676 Kaori Nishio 中出 TOKYO HOT
+https://surrit.com/d3e89c93-22e3-4881-be0e-7b909860d01e/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="STH-031 美古" tvg-logo="",STH-031 美古
+https://surrit.com/5e40674b-5e2c-4e42-9377-a9005cd640eb/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="GANA-2734 身經百戰的接機達人槍房內，帶來SEX暗拍256高大巨乳緊實身材！帶回家一個風格出眾的肌肉訓練女孩！受過訓練的身體超級敏感！不過有點M氣質……倒退+抽搐！令人愉快的外觀是帶有隱藏相機的REC！" tvg-logo="",GANA-2734 身經百戰的接機達人槍房內，帶來SEX暗拍256高大巨乳緊實身材！帶回家一個風格出眾的肌肉訓練女孩！受過訓練的身體超級敏感！不過有點M氣質……倒退+抽搐！令人愉快的外觀是帶有隱藏相機的REC！
+https://surrit.com/29be5811-4629-40dd-b54f-6c728281055e/1280x720/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="N0858 W Kan Mikami Karina / 五十嵐純子" tvg-logo="",N0858 W Kan Mikami Karina / 五十嵐純子
+https://surrit.com/7a979df4-69c4-49c0-8e35-7abadae4a40f/1280x720/video.m3u8
+#EXTINF:-1 group-title="东京" tvg-name="K0861 獵物女田橋小百合" tvg-logo="",K0861 獵物女田橋小百合
+https://surrit.com/e79792c9-5b09-4fbb-bf85-809860276fb6/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="EBOD-362 陰莖獵人 ~ 精液掠奪女賊 ~ Miyu Kotohara - 有森涼 (事原美優)" tvg-logo="",EBOD-362 陰莖獵人 ~ 精液掠奪女賊 ~ Miyu Kotohara - 有森涼 (事原美優)
+https://surrit.com/2cb67032-fad9-4b4f-8a99-e6876933d8fb/1280x720/video.m3u8
+#EXTINF:-1 group-title="高妹" tvg-name="GAS-297 高大的巨乳羅莎 T175 B120 K 罩杯" tvg-logo="",GAS-297 高大的巨乳羅莎 T175 B120 K 罩杯
+https://surrit.com/071efda3-e4c1-4280-a159-edd892dce6f5/640x360/video.m3u8
