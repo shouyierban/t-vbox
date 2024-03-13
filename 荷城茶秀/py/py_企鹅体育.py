@@ -21,7 +21,7 @@ class Spider(Spider):
 		result = {}
 		cateManual = {
 			"高妹": "高妹",
-			# "东京": "东京"
+			"东京": "东京"
 			
 		}
 		classes = []
@@ -42,12 +42,12 @@ class Spider(Spider):
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
 		if tid == "高妹":
-			url = 'https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={1}'.format(pg)
+			url = 'https://cors.notesnook.com/https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={1}'.format(pg)
 		else:
-			url = 'https://missav.com/dm16/tokyohot?sort=released_at&page={1}'.format(pg)
+			url = 'https://cors.notesnook.com/https://missav.com/dm16/tokyohot?sort=released_at&page={1}'.format(pg)
 		rsp = self.fetch(url)
 		content = self.html(rsp.text)
-		aList = content.xpath("//div[@class="relative aspect-w-16 aspect-h-9 rounded overflow-hidden shadow-lg"]")
+		aList = content.xpath("//div[contains(@class,"aspect-w-16")]")
 		pgc = math.ceil(numvL/12)
 		videos = []
 		for a in aList:
@@ -72,7 +72,7 @@ class Spider(Spider):
 
 	def detailContent(self,array):
 		aid = array[0]
-		url = "https://missav.com/{0}".format(aid)
+		url = "https://cors.notesnook.com/https://missav.com/{0}".format(aid)
 		rsp = self.fetch(url)
 		root = self.html(rsp.text)
 
