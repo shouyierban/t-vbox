@@ -5,7 +5,7 @@
         {
             "name": "live",
             "type": 0,
-            "url": "./lives/miss.txt",
+            "url": "./srct/miss.txt",
             "epg": ""
         }
     ],
